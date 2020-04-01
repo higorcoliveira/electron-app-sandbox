@@ -18,6 +18,13 @@
   },
   "homepage": "https://github.com/higorcoliveira/electron-app-sandbox#readme",
   "devDependencies": {
-    "electron": "^8.2.0"
+    "electron-builder": "^22.4.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-import": "^2.20.2"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.1",
+    "electron": "^8.2.0",
+    "electron-store": "^5.1.1"
   }
 }
