@@ -1,0 +1,23 @@
+{
+  "name": "electron-app-sandbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/higorcoliveira/electron-app-sandbox.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/higorcoliveira/electron-app-sandbox/issues"
+  },
+  "homepage": "https://github.com/higorcoliveira/electron-app-sandbox#readme",
+  "devDependencies": {
+    "electron": "^8.2.0"
+  }
+}
