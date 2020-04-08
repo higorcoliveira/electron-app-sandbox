@@ -1,30 +1,56 @@
 {
   "name": "electron-app-sandbox",
   "version": "1.0.0",
-  "description": "",
+  "description": "Abra projetos de código no VS Code através da bandeja.",
   "main": "main.js",
+  "author": "Higor Oliveira <higorcoliveira@gmail.com>",
+  "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "nodemon --exec electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:all": "npm-run-all -p dist:*",
+    "dist:mac": "electron-builder --mac",
+    "dist:windows": "electron-builder --windows",
+    "dist:linux": "electron-builder --linux",
+    "postinstall": "electron-builder install-app-deps"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/higorcoliveira/electron-app-sandbox.git"
   },
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/higorcoliveira/electron-app-sandbox/issues"
   },
   "homepage": "https://github.com/higorcoliveira/electron-app-sandbox#readme",
   "devDependencies": {
+    "electron": "^8.2.0",
     "electron-builder": "^22.4.1",
     "eslint": "^6.8.0",
-    "eslint-plugin-import": "^2.20.2"
+    "eslint-plugin-import": "^2.20.2",
+    "nodemon": "^1.19.1"
   },
-  "dependencies": {
-    "cross-spawn": "^7.0.1",
-    "electron": "^8.2.0",
-    "electron-store": "^5.1.1"
+  "dependencies": {  
+    "electron-store": "^5.1.1",
+    "fix-path": "^2.1.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "build": {
+    "appId": "br.com.higorcoliveira.codetray",
+    "productName": "Code Tray",
+    "mac": {
+      "category": "public.app-category.developer-tools"
+    },
+    "linux": {
+      "category": "Utility",
+      "icon": "icon.png",
+      "target": [
+        "deb",
+        "snap",
+        "rpm"
+      ]
+    }
   }
 }
